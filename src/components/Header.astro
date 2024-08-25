@@ -4,13 +4,13 @@ import { SITE_TITLE } from '../consts';
 ---
 
 <header>
-	<nav class="w-full flex border-b-[0.07rem] items-center border-gray-200 p-5 justify-between px-10">
-		<h2 class="font-bold text-md text-blue-500"><a href="/">{SITE_TITLE}</a></h2>
+	<nav class="w-full z-30 flex border-b-[0.07rem] items-center border-gray-200 p-5 justify-between px-10 fixed bg-white">
+
+		<h2 class="font-extrabold text-transparent text-xl bg-clip-text bg-gradient-to-r from-blue-600 to-green-400" ><a href="/">{SITE_TITLE}</a></h2>
 		<div class="flex gap-10">
 			<div class="flex gap-10">
-				<HeaderLink class="text-sm text-gray-500" href="/">Home</HeaderLink>
-				<HeaderLink class="text-sm text-gray-500" href="/blog">Documentation</HeaderLink>
-				<HeaderLink class="text-sm text-gray-500" href="/about">About</HeaderLink>
+				<HeaderLink class="text-md text-gray-500" href="/">Home</HeaderLink>
+				<HeaderLink class="text-md text-gray-500" href="/docs/get-started">Documentation</HeaderLink>
 			</div>
 			<div class="flex items-center" >
 				<div>
