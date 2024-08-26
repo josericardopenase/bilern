@@ -33,7 +33,7 @@ const { Content } = await post.render();
 <body>
 <Header />
 <main>
-	<section class="fixed left-0 w-[300px] h-[100vh] gap-10 mt-16 py-5 px-4 border-r-[0.05rem] border-gray-300">
+	<section class="md:fixed border-b-[0.05rem] left-0 w-full md:w-[300px] md:h-[100vh] gap-10 pt-24 py-5 px-4 md:border-r-[0.05rem] border-gray-300">
 		<ul class="flex gap-3 flex-col">
 			{
 				posts.map((x) => (
@@ -47,7 +47,7 @@ const { Content } = await post.render();
 		</ul>
 	</section>
 
-	<div class="pl-[320px] pr-[20px] pt-36 w-full max-w-[1300px] mx-auto">
+	<div class="md:pl-[320px] md:pr-[20px] px-3 pt-10 md:pt-36 w-full max-w-[1300px] mx-auto">
 		<h1 class="text-3xl mb-10 font-semibold">{post.data.title}</h1>
 		<Prose>
 			<Content />
