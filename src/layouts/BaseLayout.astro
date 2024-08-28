@@ -1,26 +1,27 @@
 ---
-// src/layouts/BaseLayout.astro
-
 import BaseHead from "../components/BaseHead.astro";
-import {SITE_DESCRIPTION, SITE_TITLE} from "../consts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";---
+import Footer from "../components/Footer.astro";
+---
 
 <!doctype html>
 <html lang="en">
 <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
-<body>
-<Header />
-<main>
-    <section class="fixed left-0 w-[300px] h-[100vh] mt-16 py-5 px-4 border-r-[0.05rem] border-gray-300">
-        <ul>
-            <slot name="sidebar" />
-        </ul>
-    </section>
-    <slot />
-</main>
-<Footer />
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+    <Header />
+    <main class="flex">
+        <section class="fixed left-0 w-[300px] h-[100vh] mt-16 py-5 px-4 border-r-[0.05rem] border-gray-300 dark:border-gray-700">
+            <ul>
+                <slot name="sidebar" />
+            </ul>
+        </section>
+        <div class="ml-[300px] flex-1">
+            <slot />
+        </div>
+    </main>
+    <Footer />
 </body>
 </html>
