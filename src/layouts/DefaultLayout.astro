@@ -2,19 +2,20 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import img from '../assets/cap2.png'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main class="w-full mx-auto max-w-[1000px]">
-    		<slot>
-		</main>
-		<Footer />
-	</body>
-</html>
+<head>
+	<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+</head>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
+<Header />
+<main class="w-full mx-auto max-w-[1000px] px-2 dark:bg-gray-900 dark:text-gray-100">
+	<slot></slot>
+</main>
+<Footer />
+</body>

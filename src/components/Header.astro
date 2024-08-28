@@ -13,13 +13,17 @@ import { SITE_TITLE } from '../consts';
 			<div class="w-[18px] h-[2px] bg-gray-800 dark:bg-gray-200"></div>
 		</div>
 		<div class="gap-10 hidden md:flex">
-			<div class="flex gap-10">
+			<div class="flex gap-10 items-center">
 				<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/">Home</HeaderLink>
 				<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/docs">Documentation</HeaderLink>
 				<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/contributors">Contributors</HeaderLink>
 			</div>
-			<div class="flex items-center" >
-				<a target="_blank" href="https://github.com/josericardopenase/arquimedes">
+			<div class="flex items-center gap-2" >
+				<button id="darkModeToggle" class="focus:outline-none text-sm bg-gray-100 dark:bg-gray-800 w-[35px] h-[35px] flex justify-center items-center rounded-xl ">
+					<i id="sunIcon" class="w-[20px] h-[20px] text-gray-500" data-feather="moon"></i>
+					<i id="moonIcon" class="w-[20px] h-[20px] text-gray-500 hidden" data-feather="sun"></i>
+				</button>
+				<a target="_blank" href="https://github.com/josericardopenase/arquimedes" class="bg-gray-100 dark:bg-gray-800 w-[35px] h-[35px] flex justify-center items-center rounded-xl ">
 					<svg viewBox="0 0 16 16" aria-hidden="true" width="22" height="22" astro-icon="social/github"
 					><path
 						fill="#535354"
@@ -28,17 +32,21 @@ import { SITE_TITLE } from '../consts';
 					></path></svg
 					>
 				</a>
+
 			</div>
 		</div>
 	</nav>
 		<div class="bg-white dark:bg-gray-800 p-5 border-b-[0.07rem] dark:border-gray-700 bg-gray-200 flex flex-col hidden obscure gap-3">
 			<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/">Home</HeaderLink>
 			<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/docs">Documentation</HeaderLink>
+			<HeaderLink class="text-md text-gray-500 dark:text-gray-300" href="/contributors">Contributors</HeaderLink>
 		</div>
 	</nav>
 </header>
 
 <script>
+	feather.replace();
+
 	const buttons = document.querySelectorAll('div.alert');
 	const obscure = document.querySelectorAll('div.obscure');
 
@@ -49,5 +57,16 @@ import { SITE_TITLE } from '../consts';
 			})
 
 		});
+	});
+	const toggleButton = document.getElementById('darkModeToggle');
+	const sunIcon = document.getElementById('sunIcon');
+	const moonIcon = document.getElementById('moonIcon');
+	const htmlElement = document.documentElement;
+
+	toggleButton?.addEventListener('click', () => {
+		htmlElement.classList.toggle('dark');
+
+		sunIcon?.classList.toggle('hidden');
+		moonIcon?.classList.toggle('hidden');
 	});
 </script>

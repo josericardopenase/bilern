@@ -1,2 +1,69 @@
 ---
+import DefaultLayout from "../../layouts/DefaultLayout.astro";
 ---
+
+<DefaultLayout>
+    <div class="pt-32 text-center">
+        <h1 class="text-xl md:text-4xl font-semibold">Principal contributors</h1>
+        <h2 class="text-md md:text-xl mt-2">This is our team</h2>
+        <div class="mt-10 grid-cols-1 md:grid-cols-2 gap-5 grid text-left">
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-xl p-5 flex gap-6 items-center">
+                <div class="min-h-[50px] min-w-[50px] rounded-full bg-gray-400 dark:bg-white"></div>
+                <div>
+                <h3 class="md:text-md md:text-xl font-semibold">
+                    Jose R. Peña Seco
+                </h3>
+                <h5 class="text-xs md:text-sm">
+                    Physics && Informatics Engineer Student
+                </h5>
+                </div>
+
+            </div>
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-xl p-5 flex gap-6 items-center">
+                <div class="min-h-[50px] min-w-[50px] rounded-full bg-gray-400 dark:bg-white"></div>
+                <div>
+                    <h3 class="md:text-md md:text-xl font-semibold">
+                        Gonzalo Bonilla Perez
+                    </h3>
+                    <h5 class="text-xs md:text-sm">
+                        Professional Software Engineer
+                    </h5>
+                </div>
+            </div>
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-xl p-5 flex gap-6 items-center">
+                <div class="min-h-[50px] min-w-[50px] rounded-full bg-gray-400 dark:bg-white"></div>
+                <div>
+                    <h3 class="md:text-md md:text-xl font-semibold">
+                        Eduardo Ortega Zerpa
+                    </h3>
+                    <h5 class="text-xs md:text-sm">
+                        Informatics Engineer Student
+                    </h5>
+                </div>
+            </div>
+            <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-xl p-5 flex gap-6 items-center">
+                <div class="min-h-[50px] min-w-[50px] rounded-full bg-gray-400 dark:bg-white"></div>
+                <div>
+                    <h3 class="md:text-md md:text-xl font-semibold">
+                        Antonio Aparicio Gonzalez
+                    </h3>
+                    <h5 class="text-xs md:text-sm">
+                        Informatics Engineer
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="mt-14 text-center ">
+        <h1 class="text-xl md:text-4xl font-semibold">Want to contribue?</h1>
+        <div class="relative rounded-3xl w-full bg-gray-100 py-20 border-transparent dark:bg-gray-800 mt-10 flex flex-col gap-5 items-center overflow-hidden bg-gradient-to-r from-blue-600 to-green-300 dark:from-blue-600 dark:to-green-400">
+
+            <h5 class="text-xl  md:text-3xl font-semibold z-10">
+            Just make your first pull request
+            </h5>
+            <a  target="_blank" href="https://github.com/josericardopenase/arquimedes" class="z-10 p-2 bg-gray-100 w-fit rounded-lg dark:bg-gray-800">
+                Start contributing
+            </a>
+        </div>
+    </section>
+</DefaultLayout>

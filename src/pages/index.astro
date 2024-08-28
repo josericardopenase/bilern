@@ -5,107 +5,99 @@ import Footer from '../components/Footer.astro';
 import { Image } from 'astro:assets';
 import img from '../assets/cap2.png'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import DefaultLayout from '../layouts/DefaultLayout.astro';
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100">
-		<Header />
-		<main class="w-full mx-auto max-w-[1000px] px-2 dark:bg-gray-900 dark:text-gray-100">
-			<section class="w-full justify-center items-center flex flex-col p-8 pt-48">
-				<h1 class="text-center font-extrabold md:text-7xl text-3xl text-gray-800 dark:text-gray-100">
-					This is <span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-300 dark:from-blue-400 dark:to-green-200">Arquimedes.js</span>
-				</h1>
-				<h1 class="text-xl text-center mt-3 text-gray-600 dark:text-gray-300">The physics engine made for Javascript</h1>
-				<div class=" mt-10">
-					<a href="/docs/get-started" class="bg-blue-500 rounded-lg p-2 px-6 font-semibold mt-4 text-white cursor-pointer dark:bg-blue-700">
-						Get started
-					</a>
+<DefaultLayout>
+	<section class="w-full justify-center items-center flex flex-col p-8 pt-48">
+		<h1 class="text-center font-extrabold md:text-7xl text-3xl text-gray-800 dark:text-gray-100">
+			This is <span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-300 dark:from-blue-400 dark:to-green-200">Arquimedes.js</span>
+		</h1>
+		<h1 class="text-xl text-center mt-3 text-gray-600 dark:text-gray-300">The physics engine made for Javascript</h1>
+		<div class=" mt-10">
+			<a href="/docs/get-started" class="bg-blue-500 rounded-lg p-2 px-6 font-semibold mt-4 text-white cursor-pointer dark:bg-blue-700">
+				Get started
+			</a>
+		</div>
+		<span class="mt-5 mb-5 text-gray-600 dark:text-gray-300">or just install</span>
+		<div class="bg-gray-200 text-gray-800 px-6 pr-8 py-4 rounded-xl dark:bg-gray-800 dark:text-gray-100">
+			<span class="text-gray-400 dark:text-gray-500">$</span> <span class="font-semibold text-gray-800 ml-3 dark:text-gray-100">npm i arquimedes@latest</span>
+		</div>
+	</section>
+	<section class="mt-25 p-8">
+		<h1 class="mt-20 text-md md:text-xl text-gray-500 dark:text-gray-300">¿What is arquimedes?</h1>
+		<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Arquimedes.js is a lightweight 2D physics engine for realistic simulations, ideal for visualizing and experimenting with physical concepts in real-time</h2>
+		<div class="mt-10 flex gap-5 mb-32 flex-col md:flex-row">
+			<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
+				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
+					<div class="bg-white h-[20px] w-[20px] rounded-full dark:bg-gray-300"></div>
 				</div>
-				<span class="mt-5 mb-5 text-gray-600 dark:text-gray-300">or just install</span>
-				<div class="bg-gray-200 text-gray-800 px-6 pr-8 py-4 rounded-xl dark:bg-gray-800 dark:text-gray-100">
-				  <span class="text-gray-400 dark:text-gray-500">$</span> <span class="font-semibold text-gray-800 ml-3 dark:text-gray-100">npm i arquimedes@latest</span>
-				</div>
-			</section>
-			<section class="mt-25 p-8">
-				<h1 class="mt-20 text-md md:text-xl text-gray-500 dark:text-gray-300">¿What is arquimedes?</h1>
-				<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Arquimedes.js is a lightweight 2D physics engine for realistic simulations, ideal for visualizing and experimenting with physical concepts in real-time</h2>
-				<div class="mt-10 flex gap-5 mb-32 flex-col md:flex-row">
-					<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-					  <div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-						<div class="bg-white h-[20px] w-[20px] rounded-full dark:bg-gray-300"></div>
-					  </div>
-					  Particle physics
-					</div>
-					<div class="gap-4 px-5 pr-12 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-						<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-							<div class="grid grid-cols-3 gap-2 ">
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-								<div class="bg-white h-[7px] w-[7px] rounded-full">
-								</div>
-							</div>
+				Particle physics
+			</div>
+			<div class="gap-4 px-5 pr-12 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
+				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
+					<div class="grid grid-cols-3 gap-2 ">
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
 						</div>
-						Rigidbody physics
-					</div >
-					<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-						<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-							<div class="bg-white h-[20px] w-[20px] rounded-full">
-							</div>
-							<div class="bg-white h-[20px] w-[20px] rounded-full">
-							</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
 						</div>
-						Collisions
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
+						<div class="bg-white h-[7px] w-[7px] rounded-full">
+						</div>
 					</div>
 				</div>
-				<section class="mb-20">
-					<h1 class="mt-20 md:text-xl text-gray-500 text-md dark:text-gray-300" >¿How it works?</h1>
-					<h2 class="text-xl md:text-3xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Just write a bit of code...</h2>
-					<div class="w-full grid grid-cols-1  md:grid-cols-2 mt-10 gap-8">
-						<div class="text-white bg-gray-100 rounded-xl p-6 overflow-hidden break-words">
-							<div class="flex gap-4 mb-5">
-								<div class="h-[10px] w-[10px] bg-green-500 rounded-full"></div>
-								<div class="h-[10px] w-[10px] bg-red-500 rounded-full"></div>
-								<div class="h-[10px] w-[10px] bg-yellow-500 rounded-full"></div>
-							</div>
-							<code class="prettyprint">
-							import { 'Universe' } from "arquimedes/universe"<br>
-							import { 'P5UniverseRenderer' } from "arquimedes/universe/renderers"<br>
-
-							<br>
-							const universe = new Universe();<br>
-							const renderer = new P5UniverseRenderer(universe);<br>
-							<br>
-							setFixedDeltaTimeout((dt) => renderer.render(dt), 1000 / 60)
-
-
-							</code>
-						</div>
-						<div class="w-full h-full">
-							<Image class="w-full h-full object-cover rounded-lg shadow-lg" src={img} alt="Image example."/>
-					  </div>
+				Rigidbody physics
+			</div >
+			<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
+				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
+					<div class="bg-white h-[20px] w-[20px] rounded-full">
 					</div>
-				</section>
-			</section>
-			</main>
-			<Footer>
-</html>
+					<div class="bg-white h-[20px] w-[20px] rounded-full">
+					</div>
+				</div>
+				Collisions
+			</div>
+		</div>
+		<section class="mb-20">
+			<h1 class="mt-20 md:text-xl text-gray-500 text-md dark:text-gray-300" >¿How it works?</h1>
+			<h2 class="text-xl md:text-3xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Just write a bit of code...</h2>
+			<div class="w-full grid grid-cols-1  md:grid-cols-2 mt-10 gap-8">
+				<div class="text-white bg-gray-100 rounded-xl p-6 overflow-hidden break-words">
+					<div class="flex gap-4 mb-5">
+						<div class="h-[10px] w-[10px] bg-green-500 rounded-full"></div>
+						<div class="h-[10px] w-[10px] bg-red-500 rounded-full"></div>
+						<div class="h-[10px] w-[10px] bg-yellow-500 rounded-full"></div>
+					</div>
+					<code class="prettyprint">
+						import { 'Universe' } from "arquimedes/universe"<br>
+						import { 'P5UniverseRenderer' } from "arquimedes/universe/renderers"<br>
+
+						<br>
+						const universe = new Universe();<br>
+						const renderer = new P5UniverseRenderer(universe);<br>
+						<br>
+
+						setFixedDeltaTimeout((dt) => renderer.render(dt), 1000 / 60)
+
+
+					</code>
+				</div>
+				<div class="w-full h-full">
+					<Image class="w-full h-full object-cover rounded-lg shadow-lg" src={img} alt="Image example."/>
+				</div>
+
+			</div>
+		</section>
+	</section>
+</DefaultLayout>
