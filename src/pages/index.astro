@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import FaqCard from '../components/FaqCard.astro';
 import { Image } from 'astro:assets';
 import img from '../assets/cap2.png'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -9,95 +10,142 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
-	<section class="w-full justify-center items-center flex flex-col p-8 pt-48">
-		<h1 class="text-center font-extrabold md:text-7xl text-3xl text-gray-800 dark:text-gray-100">
-			This is <span class="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-300 dark:from-blue-400 dark:to-green-200">Arquimedes.js</span>
+	<section id="inicio" class="w-full justify-center items-center flex flex-col p-8 pt-48">
+		<h1 class="text-center font-extrabold md:text-5xl text-3xl text-gray-800 dark:text-gray-100  leadig-relaxed">
+			¿Quieres exprimir tu <br><div class="mt-4"><span class=" text-green-500">máximo potencial estudiando</span>?</div>
 		</h1>
-		<h1 class="text-xl text-center mt-3 text-gray-600 dark:text-gray-300">The physics engine made for Javascript</h1>
-		<div class=" mt-10">
-			<a href="/docs/get-started" class="bg-blue-500 rounded-lg p-2 px-6 font-semibold mt-4 text-white cursor-pointer dark:bg-blue-700">
-				Get started
-			</a>
+		<h1 class="text-2xl text-center  text-gray-600 dark:text-gray-300 mt-6">
+	    	Si es así, <span class="font-semibold text-green-500 mt-4 mb-5">esto te interesa</span>
+		</h1>
+
+		<div class="w-full max-w-[700px] h-[400px] bg-gray-50 mt-10 rounded-xl flex justify-center items-center">
+		<div class="w-[100px] h-[100px] bg-green-500 rounded-full flex justify-center items-center ">
+    		<i id="sunIcon" class="w-[50px] h-[50px] text-white" data-feather="play"></i>
 		</div>
-		<span class="mt-5 mb-5 text-gray-600 dark:text-gray-300">or just install</span>
-		<div class="bg-gray-200 text-gray-800 px-6 pr-8 py-4 rounded-xl dark:bg-gray-800 dark:text-gray-100">
-			<span class="text-gray-400 dark:text-gray-500">$</span> <span class="font-semibold text-gray-800 ml-3 dark:text-gray-100">npm i arquimedes@latest</span>
 		</div>
+
+
 	</section>
-	<section class="mt-25 p-8">
-		<h1 class="mt-20 text-md md:text-xl text-gray-500 dark:text-gray-300">¿What is arquimedes?</h1>
-		<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Arquimedes.js is a lightweight 2D physics engine for realistic simulations, ideal for visualizing and experimenting with physical concepts in real-time</h2>
-		<div class="mt-10 flex gap-5 mb-32 flex-col md:flex-row">
-			<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-					<div class="bg-white h-[20px] w-[20px] rounded-full dark:bg-gray-300"></div>
-				</div>
-				Particle physics
-			</div>
-			<div class="gap-4 px-5 pr-12 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-					<div class="grid grid-cols-3 gap-2 ">
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-						<div class="bg-white h-[7px] w-[7px] rounded-full">
-						</div>
-					</div>
-				</div>
-				Rigidbody physics
-			</div >
-			<div class="gap-4 px-5 pr-16 bg-gray-100 py-4 rounded-lg font-semibold text-gray-600 flex items-center dark:bg-gray-800 dark:text-gray-300">
-				<div class="h-[55px] bg-blue-500 w-[55px] rounded-lg flex justify-center items-center dark:bg-blue-700">
-					<div class="bg-white h-[20px] w-[20px] rounded-full">
-					</div>
-					<div class="bg-white h-[20px] w-[20px] rounded-full">
-					</div>
-				</div>
-				Collisions
-			</div>
-		</div>
-		<section class="mb-20">
-			<h1 class="mt-20 md:text-xl text-gray-500 text-md dark:text-gray-300" >¿How it works?</h1>
-			<h2 class="text-xl md:text-3xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Just write a bit of code...</h2>
-			<div class="w-full grid grid-cols-1  md:grid-cols-2 mt-10 gap-8">
-				<div class="text-white bg-gray-100 rounded-xl p-6 overflow-hidden break-words">
-					<div class="flex gap-4 mb-5">
-						<div class="h-[10px] w-[10px] bg-green-500 rounded-full"></div>
-						<div class="h-[10px] w-[10px] bg-red-500 rounded-full"></div>
-						<div class="h-[10px] w-[10px] bg-yellow-500 rounded-full"></div>
-					</div>
-					<code class="prettyprint">
-						import { 'Universe' } from "arquimedes/universe"<br>
-						import { 'P5UniverseRenderer' } from "arquimedes/universe/renderers"<br>
+	<section id="bilern" class="mt-25 p-8">
+    	<div>
+    		<h1 class="mt-20 text-md md:text-2xl text-gray-500 dark:text-gray-300">¿Qué es bilern?</h1>
+    		<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">Bilern es un software fácil e intuitivo que <span class="text-semibold text-green-500">mejorará tu forma de aprender y memorizar</span> tu temario</h2>
+    	</div>
 
-						<br>
-						const universe = new Universe();<br>
-						const renderer = new P5UniverseRenderer(universe);<br>
-						<br>
+        <section class="grid-cols-2 grid gap-5 mt-10 flex items-center">
 
-						setFixedDeltaTimeout((dt) => renderer.render(dt), 1000 / 60)
+            <div>
+            <h1 class="text-2xl font-semibold text-gray-700">Creación de Flashcards </h1>
+            <p class="text-xl text-gray-500 mt-4">
+
+            Las flashcards son la base de nuestra herramienta, una de las metodologías mas probadas de memorización.
+            </p>
+            </div>
+
+            <div class="w-full h-[300px] bg-gray-50 rounded-2xl ">
+            </div>
+        </section>
 
 
-					</code>
-				</div>
-				<div class="w-full h-full">
-					<Image class="w-full h-full object-cover rounded-lg shadow-lg" src={img} alt="Image example."/>
-				</div>
+        <section class="grid-cols-2 grid gap-5 mt-10 flex items-center">
 
-			</div>
-		</section>
+        <div class="w-full h-[300px] bg-gray-50 rounded-2xl ">
+        </div>
+            <div>
+            <h1 class="text-2xl font-semibold text-gray-700">Registro de Progreso </h1>
+            <p class="text-xl text-gray-500 mt-4">
+                Otro de los aspectos mas básicos es registrar el progreso diario y semanal, te lo ofrecemos
+            </p>
+            </div>
+        </section>
+
+        <section class="grid-cols-2 grid gap-5 mt-10 flex items-center">
+
+            </div>
+                <div>
+                <h1 class="text-2xl font-semibold text-gray-700">Organización </h1>
+                <p class="text-xl text-gray-500 mt-4">
+                    ¿Harto de tantas herramientas de productividad? Tenemos la definitiva
+                </p>
+                </div>
+            </div>
+
+            <div class="w-full h-[300px] bg-gray-50 rounded-2xl ">
+        </section>
 	</section>
+
+	<div id="metodo">
+    		<h1 class="mt-20 text-md md:text-2xl text-gray-500 dark:text-gray-300">¿Qué es el método Bilern?</h1>
+    		<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">
+            Nuestro software es una adaptación completa de el <span class="text-green-400">Método Bilern</span> una forma de estudio desarrollada por nosotros que se basa en los siguientes pilares
+            </h2>
+    	</div>
+     <div>
+        <section class=" flex gap-5 mt-10 relative group">
+            <div class="bg-green-500 w-[2px] ml-[20px] h-[300px] absolute cursor-pointer"></div>
+            <div class=" cursor-pointer bg-green-500 text-white z-20 w-[40px] min-w-[40px] h-[40px]  rounded-full flex items-center font-bold justify-center">
+            1.
+            </div>
+            <div class="mt-1 ">
+                <h1 class="text-xl font-semibold">Inteligencia artificial</h1>
+                <p class="text-gray-700 mt-2 max-w-[800px]">
+                    Creemos que la <span class="text-green-500">inteligencia artificial</span> es clave para automatizar todas las labores de preparación para el estudio:
+                    creación de apuntes, preguntas de examen, flashcards... De esta forma el <span class="text-green-500">estudiante se centra en lo importante, estudiar.</span>
+                </p>
+            </div>
+        </section>
+        <section class="z-20 flex gap-5 mt-10">
+            <div class="z-20 bg-green-500 text-white w-[40px] min-w-[40px] h-[40px]  rounded-full flex items-center  font-bold justify-center">
+            2.
+            </div>
+            <div class="mt-1 ">
+                <h1 class="text-xl font-semibold">Research</h1>
+                <p class="text-gray-700 mt-2 max-w-[800px]">
+                    <span class="text-green-500">Investigamos las mejores formas de memorizar y aprender.</span> Estamos al día constantemente, nuestros algoritmos son basados en papers académicos de
+                    estudios profesionales.
+                </p>
+            </div>
+        </section>
+        <section class="z-20 flex gap-5 mt-10">
+            <div class="z-20 bg-green-500 text-white w-[40px] min-w-[40px] h-[40px]  rounded-full flex items-center  font-bold justify-center">
+            3.
+            </div>
+            <div class="mt-1 ">
+                <h1 class="text-xl font-semibold">Información</h1>
+                <p class="text-gray-700 mt-2 max-w-[800px]">
+                    La clave de una buena metodología de estudio es la disciplina, pero también los datos. En Bilern <span class="text-green-500">transformamos todos los datos que generas estudiando en información</span> que te sea útil.
+                </p>
+            </div>
+        </section>
+
+        <div>
+           		<h1 class="mt-20 text-md md:text-2xl text-gray-500 dark:text-gray-300">¿Quieres ser Estudiante Bilern?</h1>
+           		<h2 class="md:text-3xl text-xl mt-2 font-semibold max-w-[900px] text-gray-800 dark:text-gray-100">
+                   Los <span class="text-green-400">Estudiantes Bilern</span> son estudiantes de alto rendimiento con gran compromiso con su educación que buscan una mejora continua.
+                </h2>
+              		<h2 class="md:text-xl text-xl mt-2 font-semibold max-w-[900px] text-gray-600 dark:text-gray-100">
+                     Si te has sentido identificado, TE BUSCAMOS.
+                   </h2>
+                   <button class="px-10 py-2 bg-green-500 text-white font-semibold mt-5 rounded-full cursor-pointer">Quiero ser Bilern</button>
+
+       	</div>
+
+
+        <section class="text-center mt-20" id="faqs">
+            <h1 class="text-3xl font-semibold">¿Tienes preguntas?</h1>
+            <h2 class="mt-3 text-gray-500"> Nosotros tenemos respuestas </h2>
+            <section class="flex flex-col gap-2 mt-10">
+                <FaqCard question="¿Para que tipo de carreras universitarias sirve?" answer="Cualquier estudiante universitario se verá beneficiado de nuestro software y metodología. Sin embargo esta mas orientado a carreras de tipo memorísticas como medicina, derecho, historia etc. ya que uno de nuestros pilares es mejorar la capacidad de retención del alumno."/>
+                <FaqCard question="Soy opositor ¿Recomiendas bilern?" answer="Totalmente, con nuestro programa serás capaz de memorizar y aprender fácilmente todo el contenido de los test psicotécnicos y mejroar tu organización individual."/>
+                <FaqCard question="¿Que incluye la subscripción?" answer="La subscripción incluye los 3 pilares fundamentales de Bilern: Nuestro método (En forma de curso), Nuestro software y la comunidad (Un discord exclusivo para miembros)."/>
+                <FaqCard question="¿Podré aprobar si uso bilern?" answer="En bilern mejoramos tu forma de estudiar pero no hacemos milagros. Para aprobar necesitas esfuerzo, sin embargo el esfuerzo sin metodología puede acabar en suspenso. Nosotros te damos la metodología y las herramientas, lo que queda es poner de tu parte y sacarle el máximo potencial."/>
+            </section>
+        </section>
+
+        <section class="w-full h-[400px] bg-green-500 mt-20 flex justify-center items-center flex-col rounded-3xl">
+            <h1 class=" text-3xl text-white">Conviertete en <span class="font-semibold">estudiante Bilern</span></h1>
+            <h1 class=" text-xl text-white mt-4 max-w-[700px] text-center">Con una sola subscripción consigue el pack: Método Bilern, Software Bilern y Comunidad Bilern</span></h1>
+            <button class="px-10 py-2 bg-white text-gray-700 mt-5 rounded-full cursor-pointer">Quiero ser Bilern</button>
+        </section>
+     </div>
 </DefaultLayout>
